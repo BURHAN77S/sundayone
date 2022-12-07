@@ -1,0 +1,11 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.sfdx": true
+  },
+  "vlocity.sfdxUsername": "burhanceliks77developerpractice@gmail.com",
+  "workbench.colorCustomizations": {
+    "statusBar.background": null
+  }
+}
