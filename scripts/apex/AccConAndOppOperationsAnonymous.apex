@@ -5,3 +5,6 @@ AccConAndOppOperations.annualRevenue();
 
 decimal sum = AccConAndOppOperations.sumOfClosedWon();
 System.debug(sum);
+
+List<Account> var2 = AccConAndOppOperations.AccountWonOpp('Value Proposition');
+System.debug(var2);

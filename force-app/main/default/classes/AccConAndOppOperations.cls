@@ -41,4 +41,16 @@ public class AccConAndOppOperations {
         }
         return sum;
     }
+    /*Prepare a method that will return all the Accounts for which at least a closed Won Opportunity is
+present. Make it dynamic if we want to bring account for other opportunity stageNames.
+a. Example
+INPUTS OUTPUTS
+stageName=’New’ List of accounts where at least one
+opportunity stageName is ‘NEW’
+stageName=’Closed Won’ List of accounts where at least one
+opportunity stageName is ‘Closed Won’ */    
+     public static List<Account> AccountWonOpp(string stageName){
+        List<Account> accList = [select id, name from account where id in (select Accountid from opportunity where stageName = : stageName)];
+        return accList;
+     }
 }
