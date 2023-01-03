@@ -8,3 +8,5 @@ System.debug(sum);
 
 List<Account> var2 = AccConAndOppOperations.AccountWonOpp('Value Proposition');
 System.debug(var2);
+
+AccConAndOppOperations.updateTenOpp();

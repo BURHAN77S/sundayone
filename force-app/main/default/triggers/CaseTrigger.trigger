@@ -2,9 +2,42 @@
  * @description       : 
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             : 
- * @last modified on  : 12-11-2022
+ * @last modified on  : 12-25-2022
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 **/
+
+trigger CaseTrigger on Case (before insert, before update, after insert, after update) {
+
+    // 1. Whenever a case is created with origin as email then set status as new and Priority as Medium.
+
+    
+    if(trigger.isBefore && trigger.isUpdate){
+        CaseTriggerHandler.setStatus(trigger.New);
+        
+        for(case eachCase : trigger.new){
+            if(eachCase.Origin =='Email'){
+                eachCase.Status ='New';
+                eachCase.Priority ='Medium';
+            }
+        }
+    } 
+
+    if(trigger.isAfter && trigger.isInsert){
+        CaseTriggerHandler.checkCaseDescription(trigger.New);
+    }
+}
+
+    /* 2. Show the message as 'Case origin is changed for [Case Number]' whenever case origin
+field value is changed 
+
+    if(trigger.isBefore && trigger.isUpdate){
+        for (case eachCase : trigger.new){
+            if(eachCase.Origin != trigger.oldMap.get(eachCase.id).origin){
+                system.debug('Case origin is changed for '+eachCase.caseNumber);
+            }
+        }
+    }
+}*/
 
 /**
 1. Create a trigger on a Case object named “CaseTrigger”. Show the debug messages as follows:
@@ -17,7 +50,7 @@ f. after update - "We are in the after-Update triggers"
 g. after Insert - "We are in the after-Insert triggers".
 **/
 
-trigger CaseTrigger on Case (before insert, before update, after insert, after update) {
+
     /*System.debug('We are in the triggers');
     if(trigger.isAfter){
         System.debug('We are in the after triggers"');
@@ -45,10 +78,10 @@ created on 12/7/2021. then the message should be printed as –
 Case# 11234 was created with id 5005j00000C7CRJAA3 on 12/7/2021.
 - Please check the triggers for Bulk DML scenarios as well.*/
 
-list<case> listCase = trigger.new;
+/* list<case> listCase = trigger.new;
     if(trigger.isAfter && trigger.isInsert){
         for (case cs : listCase) {
             system.debug(cs.CaseNumber + ' '+cs.id+' '+cs.CreatedDate);
         }
     }
-}
+} */

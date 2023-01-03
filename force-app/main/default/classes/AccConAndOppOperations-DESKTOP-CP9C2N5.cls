@@ -80,8 +80,7 @@ opportunities needs to be created”*/
         Account accLimit1 = [select id, name, AnnualRevenue from Account WHERE id = : accId];
         for(Integer i =0 ; i < n ; i++ ){
             Opportunity opp1 = new Opportunity();
-            opp1.StageName;
+            opp1.StageName =''
 
         }
-    }
 }
