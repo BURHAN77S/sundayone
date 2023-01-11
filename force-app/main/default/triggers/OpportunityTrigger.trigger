@@ -15,7 +15,7 @@ iii. Opportunity is reparented i.e AccountId field value is changed.
 iv. A new Opportunity is created and tagged to an account.
 v. An Opportunity is deleted or undeleted */
 
-    set<id> accIds = new set<id>();
+    /*set<id> accIds = new set<id>();
     if(trigger.isAfter){
         
         if(trigger.isInsert || trigger.isUndelete){
@@ -53,7 +53,7 @@ v. An Opportunity is deleted or undeleted */
         OpportunityTriggerHandler.updateHighestAmountOppName(accIds);
         OpportunityTriggerHandler.updateTargetAchievedOpportunityName(accIds);
         OpportunityTriggerHandler.updateTotalAmountGen(accIds);
-    }
+    }*/
 
 /*Part 1 – Debugs in Triggers
 1. Print the new and old field values for (Opportunity Name and Amount) fields whenever
