@@ -11,7 +11,7 @@ trigger CaseTrigger on Case (before insert, before update, after insert, after u
     // 1. Whenever a case is created with origin as email then set status as new and Priority as Medium.
 
     
-    if(trigger.isBefore && trigger.isUpdate){
+    /*if(trigger.isBefore && trigger.isUpdate){
         CaseTriggerHandler.setStatus(trigger.New);
         
         for(case eachCase : trigger.new){
@@ -83,5 +83,5 @@ Case# 11234 was created with id 5005j00000C7CRJAA3 on 12/7/2021.
         for (case cs : listCase) {
             system.debug(cs.CaseNumber + ' '+cs.id+' '+cs.CreatedDate);
         }
-    }
-} */
+    }*/
+}

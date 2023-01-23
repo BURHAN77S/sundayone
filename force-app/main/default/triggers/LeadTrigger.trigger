@@ -10,7 +10,7 @@
 message otherwise show "Rating should be hot".*/
 
 trigger LeadTrigger on Lead (before insert, after insert) {
-    if(trigger.isBefore && trigger.isInsert){
+    /*if(trigger.isBefore && trigger.isInsert){
         for (lead eachLead : trigger.new) {
             if (eachLead.LeadSource =='Web') {
                 system.debug('Rating should be Cold');
@@ -18,5 +18,5 @@ trigger LeadTrigger on Lead (before insert, after insert) {
                 system.debug('Rating should be hot');
             }
         }
-    }
+    }*/
 }

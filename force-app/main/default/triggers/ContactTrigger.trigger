@@ -11,8 +11,8 @@ WITH Account’. If contact is created without ‘Account’ then print ‘[Cont
 contact create WITHOUT Account’*/
 
 trigger ContactTrigger on Contact (before insert, after insert,before update, after update) {
-    if(trigger.isAfter && trigger.isUpdate){
-        ContactTriggerHandler.updateAccountFax(trigger.New, trigger.OldMap);
+    /*if(trigger.isAfter && trigger.isUpdate){
+        ContactTriggerHandler.updateAccountFax(trigger.New, trigger.OldMap);*/
     /*if(trigger.isBefore && trigger.isInsert){
         for (Contact eachCon : trigger.new) {
             if(eachCon.AccountId !=null){
@@ -22,5 +22,4 @@ trigger ContactTrigger on Contact (before insert, after insert,before update, af
             }
         }
     }*/
-    }
 }
