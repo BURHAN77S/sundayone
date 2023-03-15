@@ -1,0 +1,9 @@
+.parent-wrapper{
+    padding: 10px;
+    border: 5px solid cornflowerblue; 
+ }
+ .child-wrapper{
+     padding:10px;
+     border: 2px solid greenyellow;
+     margin-top: 10px;
+ }

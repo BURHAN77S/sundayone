@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Parent to child" icon-name="standard:omni_supervisor">
+    <div class="slds-var-m-around_medium parent-wrapper">
+        <div class="slds-var-m-top_small slds-align_absolute-center">
+            <lightning-input
+                type="color"
+                label="Select your color"
+                onchange={changeHandler}>
+            </lightning-input>
+        </div>
+    <div class="child-wrapper">
+        <c-color-selector-child
+            pick-color={selectedColor}>
+        </c-color-selector-child>
+    </div>
+        <div class="slds-var-m-top_small slds-align_absolute-center">
+            <lightning-button
+                label="Click Me"
+                variant="brand"
+                onclick={clickHandler}>
+            </lightning-button>
+        </div>
+    </div>
+    </lightning-card>    
+</template>
