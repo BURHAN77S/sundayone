@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title = "Opportunity Total By Stage" icon-name="standard:opportunity">
+        <div class="slds-var-m-around_medium">
+            <lightning-combobox
+                label = "Select Opportunity Stage"
+                options = {stageOptions}
+                onchange={changeHandler}>
+            </lightning-combobox>
+            <div class = "slds-var-m-top_small">
+                <template
+                lwc:if = {oppTotal}>
+                <p>Total Amount is {oppTotal}</p>
+            </template>
+            <template
+                lwc:if = {error}>
+                <p>Error {error}</p>
+            </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
