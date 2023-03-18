@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Child-Parent Communication">
+        <div class="slds-var-m-around_medium">
+            <lightning-button
+                label="New Account"
+                variant="brand"
+                onclick={newAccount}>
+            </lightning-button>
+            <template lwc:if={showModal}>
+                <!--child compenantini cagiracagiz..-->
+                <c-modal-child onclose={closeHandler}></c-modal-child>
+            </template>
+            <div class="slds-var-m-top_small">
+                <template lwc:if={message}>
+                    <!-- Primitive Data
+                     <div>{message}</div>-->
+                    <!--Non-primiyive Data-->
+                    <div>
+                        {message.Name}, {message.Position}, {message.Company}
+                    </div>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
